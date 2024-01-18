@@ -1,0 +1,194 @@
+.boardwrite_main {
+    text-align: center;
+    font-size: 13px;
+    user-select: none;
+    margin-top: 60px;
+    font-family: 'TheJamsil5Bold';
+    margin-left: 300px;
+}
+
+.WriteForm{
+    width: 75%;
+    height: auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    text-align: center;
+    border: 5px solid black;
+    border-radius: 30px;
+    margin: 0 auto;
+}
+
+.items_title {
+    width: 90%;
+    border: none;
+    border-bottom: 2px solid rgb(128, 128, 128);
+    padding: 10px 10px;
+    outline: none;
+    color: #636e72;
+    height: 25px;
+    background: none;
+    font-family: 'TheJamsil5Bold';
+    font-size: 17px;
+}
+
+.items_dep, .items_des {
+    width: 80%;
+    border: none;
+    border-bottom: 2px solid rgb(128, 128, 128);
+    padding: 10px 10px;
+    outline: none;
+    color: #636e72;
+    height: 25px;
+    background: none;
+    margin-top: -10px;
+    font-family: 'TheJamsil5Bold';
+    font-size: 15px;
+}
+
+.board_content {
+    width: 93%;
+    height: 300px;
+    box-sizing: border-box;
+    border: 2px solid rgb(128, 128, 128);
+    font-size: 15px;
+    resize: both;
+    margin-top: 20px;
+    padding: 10px;
+    font-family: 'TheJamsil5Bold';
+}
+
+.btn_delete {
+    display: inline-block;
+    width: 15%;
+    cursor: pointer;
+    vertical-align: top;
+}
+.btn_write{
+    position: relative;
+    margin: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 40%;
+    background: dodgerblue;
+    color: white;
+    font-family: 'TheJamsil5Light';
+    letter-spacing: 2px;
+    border: none;
+    cursor: pointer;
+    display: inline;
+}
+.btn_cancel{
+    position: relative;
+    margin: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 40%;
+    background: lightslategrey;
+    background-size: 200%;
+    color: white;
+    font-family: 'TheJamsil5Light';
+    letter-spacing: 2px;
+    border: none;
+    cursor: pointer;
+    display: inline;
+}
+
+.writeContainer {
+    display: flex;
+    justify-content: space-between;
+}
+.writeContainer_sec {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    text-align: left;
+    padding-left: 40px;
+}
+ .writeContainer_th {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+     margin-bottom: 10px;
+     text-align: left;
+     padding-left: 40px;
+     margin-left: 10px;
+}
+
+.left-section{
+    text-align: left;
+    margin-left: 40px;
+}
+.right-section {
+    width: 60%; /* 이 값을 조절하여 두 섹션의 너비를 변경할 수 있습니다. */
+}
+.left-section_sec {
+    width: 60%;
+}
+.right-section_sec {
+    width: 60%;
+    margin-left: 40px;
+}
+
+.date-time-selector {
+    margin-left: 10px;
+}
+.date-time-selector input {
+    height: 20px;
+}
+/*input {*/
+/*    font-family: 'TheJamsil5Light';*/
+/*}*/
+select {
+    font-family: 'TheJamsil5Light';
+    height: 25px;
+}
+/*label {*/
+/*    font-family: 'TheJamsil5Bold';*/
+/*}*/
+h1 {
+    font-size: 30px;
+}
+
+.left-section .rst_wrap{
+    width: 220px;
+}
+
+.left-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.left-section li {
+    margin: 5px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.left-section li:hover {
+    background-color: #dcdcdc;
+}
+
+.left-section .button {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: white;
+    color: dodgerblue;
+    border: 2px solid dodgerblue; /* 기본 테두리 색상 */
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.left-section .button:hover {
+    background-color: dodgerblue;
+    border-color: dodgerblue; /* 호버 시 테두리 색상 */
+    color: white;
+}

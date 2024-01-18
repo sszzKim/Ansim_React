@@ -1,0 +1,117 @@
+#main_container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    max-height: 100vh; /* calc(100vh - 150px) */
+    position: relative; /* 상대 위치 설정 */
+}
+#map_div {
+    flex: 1;
+}
+#sidebar { /*Nav.js*/
+    width: 120px;
+    height: 100vh;
+    background-color: #f0f0f0;
+    user-select: none;
+    text-align: center;
+}
+#sidebar_menu {
+    display: none;
+}
+#sidebar_menu.open {
+    display: flex; /* 열릴 때 보이도록 */
+    width: 350px;
+    max-height: 100vh;
+    flex-direction: row; /* 가로로 나열 */
+    padding: 0 0 0 30px;
+}
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+#sidebar li {
+    margin-top: 20px;
+    cursor: pointer;
+}
+#cardList {
+    user-select: none;
+    cursor: pointer;
+    overflow-y: auto;
+    flex: 1;
+    max-height: 85vh; /* max-height: 725px;*/
+    width: 230px;
+}
+.card_layout {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #EBF3FF;
+    margin-top: 10px;
+}
+.card_nm {
+    padding-top: 5px;
+    margin-bottom: 10px;
+    color: #0068C8;
+    font-weight: bold;
+    font-size: 18px;
+}
+.card_addr, .card_telno {
+    margin-bottom: 3px;
+    /*margin-right:10px;*/
+}
+.direction_icon, .facility_icon, .board_icon , .mypage_icon, .login_icon,.logout_icon {
+    font-size: 30px;
+    padding-left: 15px;
+}
+
+.introduce {
+    font-size: 30px;
+    /*margin-left: 10px;*/
+    position: fixed;
+    bottom: 0;
+    /*left: 2.5%; 가운데 정렬을 위해 추가할 수 있습니다. */
+    /*transform: translateX(50%);*/
+    padding: 0 0 0 30px;
+}
+
+.counter {
+    width: 18px;
+    height: 18px;
+    background-color: red;
+    border-radius: 50%;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    bottom: 45px;
+    left: 75px;
+}
+.notification_div {
+    position: relative;
+}
+#dropdownMenu option {
+    font-size: 14px;
+    letter-spacing: 10px;
+}
+
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #E0E0E0;
+    color: dodgerblue;
+    border: none;
+    border-radius: 4px;
+    border-color: dodgerblue;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button-link:hover {
+    background-color: white;
+}

@@ -1,0 +1,98 @@
+#myPageWrap{
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.myPageMain{
+    /*
+    width: 400px;
+    height: auto;*/
+    width: 60vh;
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*margin: 17% 25% 0 120%; */
+    /*padding: 45px 60px; */
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px 2px darkgray;
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.MyPageTitle{
+    color: dodgerblue;
+}
+
+.imgView {
+    position: relative;
+    width: 80%;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+    border: none;
+}
+
+.imgView::before {
+    content: "";
+    display: block;
+    padding-top: 100%; /* 부모 요소의 가로 너비에 비례하는 높이를 설정 */
+}
+
+.imgBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.field{
+    margin: 20px 0;
+}
+
+.myPageBtnDiv {
+    width: 300px; /* 원하는 크기로 설정 */
+    height: 40px;
+    border: 1px solid darkgray;
+    border-radius: 8px;
+    overflow: hidden; /* 내부 컨텐츠가 부모 크기를 벗어나지 않도록 함 */
+    text-align: center;
+    line-height: 40px;
+}
+
+.myPageBtn {
+    width: 50%;
+    height: 27px;
+    line-height: 27px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: white;
+    color: dodgerblue;
+    border: 2px solid dodgerblue; /* 기본 테두리 색상 */
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.myPageBtn:hover{
+    background-color: dodgerblue;
+    border-color: dodgerblue; /* 호버 시 테두리 색상 */
+    color: white;
+}
+
+
+
+
+
+
