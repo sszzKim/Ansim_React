@@ -2,6 +2,7 @@ import '../../css/Login.css';
 import getCookie from '../../components/GetCookie';
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 export const spring_url = process.env.REACT_APP_SPRING_URL;
 
@@ -17,6 +18,8 @@ const LoginPage = () =>{
     const [user_id, setUser_id] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+
+    const navigate = useNavigate();
 
 
     const cookieManage = (accessToken, refreshToken, user_nm, role) => {
@@ -87,7 +90,11 @@ const LoginPage = () =>{
                     console.log('user_nm: ' + decodeURIComponent(data.user_nm));
                     cookieManage(data.accessToken, data.refreshToken, data.user_nm, data.role);
                     // cookieManage(data.accessToken);
-                    document.location.href='/guide';
+                    //document.location.href='/guide';
+                    const clicked = () => {
+                        navigate("/guide");
+                    };
+                    clicked();
                 } else if(data.message === 'ID_NOT_FOUND') {
                     setMessage('존재하지 않는 아이디입니다.');
                 } else if(data.message === 'PASSWORD_NOT_FOUND') {
