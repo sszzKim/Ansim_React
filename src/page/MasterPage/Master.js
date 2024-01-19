@@ -4,12 +4,13 @@ import { scaleOrdinal } from 'd3-scale';
 import { schemeCategory10 } from 'd3-scale-chromatic';
 import '../../css/MasterPage.css';
 
+export const spring_url = process.env.REACT_APP_SPRING_URL;
 
 function Master() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch('/restapi/master')
+        fetch(spring_url+'/restapi/master')
             .then(response => response.json())
             .then(data => {
                 let newData = {};

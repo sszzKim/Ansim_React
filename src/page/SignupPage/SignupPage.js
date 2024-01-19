@@ -1,5 +1,7 @@
 import '../../css/SignupPage.css';
 import { useState, useRef} from 'react';
+
+export const spring_url = process.env.REACT_APP_SPRING_URL;
 const SignupPage = () => {
 
     //회원 등록 정보 - state 등록
@@ -10,7 +12,7 @@ const SignupPage = () => {
         setUser_id(e.target.value);
         let formData = new FormData();
         formData.append("user_id",user_idRef.current.value);
-        await fetch('http://localhost:8080/member/idCheck',{method : 'POST', body: formData})
+        await fetch(spring_url+'/member/idCheck',{method : 'POST', body: formData})
             .then((response) => response.json())
             .then((data) => {
                 console.log("아이디체크 컨트롤러보낸다")
@@ -111,7 +113,7 @@ const SignupPage = () => {
         formData.append("fromSocial",fromSocial);
         formData.append("imgProfile", imgProfile);
 
-        await fetch('http://localhost:8080/member/signup', {
+        await fetch(spring_url+'/member/signup', {
             method: 'POST',
             body: formData,
         }).then((response) => response.json())

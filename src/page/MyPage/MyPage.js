@@ -4,6 +4,8 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import getCookie from '../../components/GetCookie';
 
+export const spring_url = process.env.REACT_APP_SPRING_URL;
+
 const MyPage = () => {
 
     //쿠키 가져 오기
@@ -15,7 +17,7 @@ const MyPage = () => {
     useEffect(()=> {
 
         const fetchData = async () => {
-            const member = await axios.get(`http://localhost:8080/member/memberInfo?&user_id=${userCookie}`);
+            const member = await axios.get(spring_url+`/member/memberInfo?&user_id=${userCookie}`);
             setMember(member.data);
         }
         fetchData();

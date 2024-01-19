@@ -3,6 +3,8 @@ import getCookie from '../../components/GetCookie';
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+export const spring_url = process.env.REACT_APP_SPRING_URL;
+
 //import CryptoJS from 'crypto-js'; //AES 암호화 알고리즘으로 패스워드 쿠키를 암호화/복호화
 
 const LoginPage = () =>{
@@ -70,7 +72,7 @@ const LoginPage = () =>{
 
         //JWT 로그인
         // await fetch('http://localhost:8080/restapi/loginCheck?autoLogin=JWTNew',{
-        await fetch('http://localhost:8080/member/loginCheck',{
+        await fetch(spring_url+'/member/loginCheck',{
 
             method : 'POST',
             body : formData

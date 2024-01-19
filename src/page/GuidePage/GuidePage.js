@@ -13,6 +13,8 @@ import emergbell_b_icon from "../../images/emergbell_b_icon.png";
 import police_b_icon from "../../images/police_b_icon.png";
 import store_b_icon from "../../images/store_b_icon.png";
 
+export const spring_url = process.env.REACT_APP_SPRING_URL;
+
 const GuidePage = (props) => {
 
     //console.log("GuidePage 랜더링");
@@ -271,8 +273,10 @@ const GuidePage = (props) => {
 
         console.log('queryString',queryString);
 
+
+
         //컨트롤러 호출
-        await fetch('http://localhost:8080/guide/route',{
+        await fetch(spring_url+'/guide/route',{
             method:'POST',
             headers: {"content-type":"application/json"},
             body: JSON.stringify(queryString)

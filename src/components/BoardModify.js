@@ -4,6 +4,7 @@ import {useSearchParams} from "react-router-dom";
 import '../css/BoardModify.css';
 import getCookie from '../components/GetCookie';
 
+export const spring_url = process.env.REACT_APP_SPRING_URL;
 
 const BoardModify = () => {
 
@@ -47,7 +48,7 @@ const BoardModify = () => {
 
         const fetchData = async () => {
             //게시물 상세 가져오기
-            const response = await axios.get(`http://localhost:8080/restapi/modify?seqno=${seqno}&&page=${page}&keyword=${keyword}&user_id=${user_id}`);
+            const response = await axios.get(spring_url+`/restapi/modify?seqno=${seqno}&&page=${page}&keyword=${keyword}&user_id=${user_id}`);
             const data = response.data;
 
             // setCookie_stored_file_nm(data.cookie_stored_file_nm);
@@ -120,7 +121,7 @@ const BoardModify = () => {
             console.log(entry);
         }
 
-        let uploadURL = "http://localhost:8080/restapi/modify";
+        let uploadURL = spring_url+"/restapi/modify";
         //let uploadURL = "/restapi/write1111111";
 
 

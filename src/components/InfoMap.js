@@ -7,6 +7,8 @@ import deliboxIcon from "../images/delivery_c_icon.png";
 import policeIcon from "../images/police_c_icon.png";
 import storeIcon from "../images/store_c_icon.png";
 import axios from "axios";
+
+export const spring_url = process.env.REACT_APP_SPRING_URL;
 const InfoMap = () => {
     const {Tmapv2} = window;
     //const [map, setMap] = useState(null);
@@ -212,7 +214,7 @@ const InfoMap = () => {
         const queryString = createQueryStringFromBounds(bounds);
 
         axios
-            .post('http://localhost:8080/info/cctvList', queryString)
+            .post(spring_url+'/info/cctvList', queryString)
             .then((cctvRes) => {
                 drawMarkers(cctvRes.data);
                 setCctvData(cctvRes.data);
@@ -224,7 +226,7 @@ const InfoMap = () => {
         const queryString = createQueryStringFromBounds(bounds);
 
         axios
-            .post('http://localhost:8080/info/emergbellList', queryString)
+            .post(spring_url+'/info/emergbellList', queryString)
             .then((emergRes) => {
                 drawMarkers(emergRes.data);
                 setEmergbellData(emergRes.data);
@@ -236,7 +238,7 @@ const InfoMap = () => {
         const queryString = createQueryStringFromBounds(bounds);
 
         axios
-            .post('http://localhost:8080/info/deliboxList', queryString)
+            .post(spring_url+'/info/deliboxList', queryString)
             .then((deliboxRes) => {
                 drawMarkers(deliboxRes.data);
                 setDeliboxData(deliboxRes.data);
@@ -248,7 +250,7 @@ const InfoMap = () => {
         const queryString = createQueryStringFromBounds(bounds);
 
         axios
-            .post('http://localhost:8080/info/policeList', queryString)
+            .post(spring_url+'/info/policeList', queryString)
             .then((policeRes) => {
                 drawMarkers(policeRes.data);
                 setPoliceData(policeRes.data);
@@ -260,7 +262,7 @@ const InfoMap = () => {
         const queryString = createQueryStringFromBounds(bounds);
 
         axios
-            .post('http://localhost:8080/info/storeList', queryString)
+            .post(spring_url+'/info/storeList', queryString)
             .then((storeRes) => {
                 drawMarkers(storeRes.data);
                 setStoreData(storeRes.data);

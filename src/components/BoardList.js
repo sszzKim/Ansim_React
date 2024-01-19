@@ -7,6 +7,8 @@ import BoardCard from "./BoardCard";
 
 import getCookie from '../components/GetCookie';
 
+export const spring_url = process.env.REACT_APP_SPRING_URL;
+
 const BoardList = () => {
     // const [params, setParams] = useSearchParams(); // page, keyword 상태가 들어감.
     // const [page, setPage] = useState(params.get('page')); // params로 겟한 페이지 번호를 저장할 상태와 그 상태를 변경하는 함수를 선언.
@@ -98,7 +100,7 @@ const BoardList = () => {
 
         // const response = await fetch(`http://localhost:8080/restapi/list?page=${page}&keyword=${keyword}`, {credentials: 'include'}); //API 호출
 
-        const response = await fetch(`http://localhost:8080/restapi/list?page=${page}&keyword=${keyword}&user_id=${user_id}`); //API 호출
+        const response = await fetch(spring_url+`/restapi/list?page=${page}&keyword=${keyword}&user_id=${user_id}`); //API 호출
 
         if (!user_id) {
             alert('서비스 이용을 위해 로그인해주세요.');

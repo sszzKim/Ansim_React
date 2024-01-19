@@ -5,6 +5,8 @@ import '../css/BoardWrite.css';
 import getCookie from '../components/GetCookie';
 import {HiOutlineLocationMarker} from "react-icons/hi";
 
+export const spring_url = process.env.REACT_APP_SPRING_URL;
+
 const BoardWrite = () => {
 
     //쿠키 가져 오기
@@ -62,7 +64,7 @@ const BoardWrite = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await axios.get(`/restapi/write?user_id=${user_id}`); //API 호출
+            const response = await axios.get(spring_url+`/restapi/write?user_id=${user_id}`); //API 호출
             // response.data로 데이터에 직접 접근
             const data = response.data;
             // setUser_id(data.user_id);
@@ -98,7 +100,7 @@ const BoardWrite = () => {
             return;
         }
 
-        const uploadURL = "/restapi/write";
+        const uploadURL = spring_url+"/restapi/write";
         const formData = new FormData();
 
         formData.append('user_id', user_id);

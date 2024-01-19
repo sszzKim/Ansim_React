@@ -3,6 +3,8 @@ import '../css/SafetyFacilityReportForm.css';
 import {DataContext} from "./DataProvider";
 import getCookie from './GetCookie';
 
+export const spring_url = process.env.REACT_APP_SPRING_URL;
+
 const SafetyFacilityReportForm = () => {
 
     const [brokenOption, setBrokenOption] = useState(null);
@@ -17,7 +19,7 @@ const SafetyFacilityReportForm = () => {
     //시설type별 고장유형 가져오기
     async function callBrokenType(type){
 
-        await fetch(`http://localhost:8080/info/brokenType?type=${type}`,{
+        await fetch(spring_url+`/info/brokenType?type=${type}`,{
             method:'GET'
         }).then((response) => response.json())
             .then((data)=>{
@@ -52,7 +54,7 @@ const SafetyFacilityReportForm = () => {
         console.log("data:",data);
 
         //컨트롤러 호출
-        await fetch(`http://localhost:8080/info/brokenReportAdd`,{
+        await fetch(spring_url+`/info/brokenReportAdd`,{
             method:'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data)

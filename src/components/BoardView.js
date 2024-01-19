@@ -8,6 +8,8 @@ import getCookie from '../components/GetCookie';
 import locationIcon from "../images/location.png";
 import pinIcon from "../images/pin_icon.png";
 
+export const spring_url = process.env.REACT_APP_SPRING_URL;
+
 const BoardView = () => {
 
     //날짜 기준을 한국으로 지정
@@ -58,7 +60,7 @@ const BoardView = () => {
     const fetchData = async() => {
 
         //게시물 상세 보기
-        const response = await axios.get(`http://localhost:8080/restapi/view?seqno=${seqno}&page=${page}&keyword=${keyword}&user_id=${cookie_user_id}`);
+        const response = await axios.get(spring_url+`/restapi/view?seqno=${seqno}&page=${page}&keyword=${keyword}&user_id=${cookie_user_id}`);
         const data = response.data;
 
         //console.log("response.data",response.data);
@@ -112,7 +114,7 @@ const BoardView = () => {
         const seqno = param.get('seqno');
 
         if(window.confirm("정말로 삭제 하시겠습니까?") === true){
-            fetch(`http://localhost:8080/restapi/delete?seqno=${seqno}`, {
+            fetch(spring_url+`/restapi/delete?seqno=${seqno}`, {
                 method: 'GET'
             }).then((response) => response.json())
                 .then((data) => {
@@ -128,7 +130,7 @@ const BoardView = () => {
     const application = () => {
         const seqno = param.get('seqno');
 
-        fetch(`http://localhost:8080/restapi/view?post_no=${seqno}&applicant=${cookie_user_id}&writer=${user_id}`, {
+        fetch(spring_url+`/restapi/view?post_no=${seqno}&applicant=${cookie_user_id}&writer=${user_id}`, {
             method: 'POST'
         }).then((response) => response.json())
             .then((data) => {
@@ -147,7 +149,7 @@ const BoardView = () => {
 
     // 동행 신청 수락
     const accept = (user_id) => {
-        fetch(`http://localhost:8080/restapi/accept?post_no=${seqno}&applicant=${user_id}&writer=${cookie_user_id}`, {
+        fetch(spring_url+`/restapi/accept?post_no=${seqno}&applicant=${user_id}&writer=${cookie_user_id}`, {
             method: 'POST'
         }).then((response) => response.json())
             .then((data) => {
@@ -166,7 +168,7 @@ const BoardView = () => {
 
     // 동행 신청 거절
     const deny = (user_id) => {
-        fetch(`http://localhost:8080/restapi/deny?post_no=${seqno}&applicant=${user_id}&writer=${cookie_user_id}`, {
+        fetch(spring_url+`/restapi/deny?post_no=${seqno}&applicant=${user_id}&writer=${cookie_user_id}`, {
             method: 'POST'
         }).then((response) => response.json())
             .then((data) => {
