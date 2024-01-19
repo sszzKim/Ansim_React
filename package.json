@@ -30,6 +30,7 @@
     "yarn": "^1.22.21"
   },
   "proxy": "http://localhost:8080",
+  "homepage": "http://www.ansim.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
